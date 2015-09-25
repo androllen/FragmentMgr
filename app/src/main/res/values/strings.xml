@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">FragmentMgr</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="cube_mints_exit_tip">再按一次，退出程序</string>
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
