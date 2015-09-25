@@ -11,9 +11,10 @@ import com.cc.fragmentmgr.R;
  * Created by androllen on 2015/9/25.
  */
 public class PtrDemoHomeFragment extends TitleBaseFragment{
+
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view=super.createView(inflater, container, savedInstanceState);
+    protected View createView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View view =inflater.inflate(this.getFrameLayoutId(), null);
         setHeaderTitle(this.getString(R.string.hello_blank_fragment));
         return view;
     }
