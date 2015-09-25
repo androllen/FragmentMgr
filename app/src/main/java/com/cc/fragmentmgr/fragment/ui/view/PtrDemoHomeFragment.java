@@ -14,7 +14,7 @@ public class PtrDemoHomeFragment extends TitleBaseFragment{
 
     @Override
     protected View createView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view =inflater.inflate(this.getFrameLayoutId(), null);
+        View view =inflater.inflate(this.getFrameLayoutId(), (ViewGroup)null);
         setHeaderTitle(this.getString(R.string.hello_blank_fragment));
         return view;
     }

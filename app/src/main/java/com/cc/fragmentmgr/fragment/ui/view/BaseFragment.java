@@ -10,7 +10,7 @@ import com.cc.fragmentmgr.fragment.CCFragment;
 public abstract class BaseFragment extends CCFragment {
 
 
-    protected abstract int getFrameLayoutId();
+    protected abstract int getLayoutId();
     protected abstract boolean enableDefaultBack();
 
 }

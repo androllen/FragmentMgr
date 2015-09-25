@@ -13,6 +13,7 @@ import com.cc.fragmentmgr.R;
  */
 public abstract class TitleBaseFragment extends BaseFragment implements View.OnClickListener {
 
+    protected abstract int getFrameLayoutId();
     protected TitleHeaderBar mTitleHeaderBar;
     protected LinearLayout mContentContainer;
 
@@ -22,7 +23,7 @@ public abstract class TitleBaseFragment extends BaseFragment implements View.OnC
 
 
     public View onCreateView(LayoutInflater Inflater, ViewGroup paramViewGroup, Bundle paramBundle) {
-        ViewGroup view = (ViewGroup) Inflater.inflate(R.layout.base_content_frame_with_title_header, (ViewGroup)null);
+        ViewGroup view = (ViewGroup) Inflater.inflate(this.getLayoutId(), (ViewGroup)null);
         LinearLayout contentContainer = (LinearLayout) view.findViewById(R.id.cube_mints_content_frame_content);
 
         this.mTitleHeaderBar = (TitleHeaderBar) view.findViewById(R.id.cube_mints_content_frame_title_header);
@@ -56,7 +57,7 @@ public abstract class TitleBaseFragment extends BaseFragment implements View.OnC
     }
 
     @Override
-    protected int getFrameLayoutId() {
+    protected int getLayoutId() {
         return R.layout.base_content_frame_with_title_header;
     }
 
