@@ -34,7 +34,6 @@
             android:textColor="#fff"
             android:textSize="17sp"/>
     </RelativeLayout>
-
     <RelativeLayout
         android:id="@+id/ly_title_bar_right"
         android:layout_width="100dp"
@@ -50,6 +49,5 @@
             android:textColor="#fff"
             android:textSize="17sp"/>
     </RelativeLayout>
-
 
 </RelativeLayout>

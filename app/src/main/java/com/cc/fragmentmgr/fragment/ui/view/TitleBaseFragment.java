@@ -28,7 +28,7 @@ public abstract class TitleBaseFragment extends BaseFragment implements View.OnC
 
         this.mTitleHeaderBar = (TitleHeaderBar) view.findViewById(R.id.cube_mints_content_frame_title_header);
         if (enableDefaultBack()) {
-            getTitleHeaderBar().setOnClickListener(this);
+            mTitleHeaderBar.getLeftViewContainer().setOnClickListener(this);
         } else {
             this.mTitleHeaderBar.getLeftViewContainer().setVisibility(View.INVISIBLE);
         }

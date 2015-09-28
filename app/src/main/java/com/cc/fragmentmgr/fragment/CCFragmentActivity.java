@@ -1,6 +1,7 @@
 package com.cc.fragmentmgr.fragment;
 
 import android.content.Context;
+import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
@@ -24,7 +25,7 @@ public abstract class CCFragmentActivity  extends FragmentActivity{
     private static final String LOG_TAG = "cc-fragment";
     public static boolean DEBUG = true;
     protected CCFragment mCurrentFragment;
-    private boolean mCloseWarned;
+    private boolean mCloseWarned=false;
 
     protected abstract String getCloseWarning();
 
@@ -120,7 +121,13 @@ public abstract class CCFragmentActivity  extends FragmentActivity{
     {
         return false;
     }
-
+    private Handler handler = new Handler();
+    private Runnable closeApp =new Runnable() {
+        @Override
+        public void run() {
+            mCloseWarned = false;
+        }
+    };
     public void onBackPressed()
     {
         if (processBackPressed()) {
@@ -138,8 +145,10 @@ public abstract class CCFragmentActivity  extends FragmentActivity{
                 if ((!(this.mCloseWarned)) && (!(TextUtils.isEmpty(closeWarningHint)))) {
                     Toast toast = Toast.makeText(this, closeWarningHint, Toast.LENGTH_SHORT);
                     toast.show();
-                    this.mCloseWarned = true;
+                    this.mCloseWarned=true;
+                    handler.postDelayed(closeApp,2000);
                 } else {
+                    handler.removeCallbacks(closeApp);
                     doReturnBack();
                 }
             } else {

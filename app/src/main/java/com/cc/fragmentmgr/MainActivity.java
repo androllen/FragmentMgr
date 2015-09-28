@@ -2,10 +2,10 @@ package com.cc.fragmentmgr;
 
 import android.os.Bundle;
 
-import com.cc.fragmentmgr.fragment.ui.view.CCBaseActivity;
+import com.cc.fragmentmgr.fragment.BaseActivity;
 import com.cc.fragmentmgr.fragment.ui.view.PtrDemoHomeFragment;
 
-public class MainActivity extends CCBaseActivity {
+public class MainActivity extends BaseActivity {
 
     @Override
     protected int getFragmentContainerId() {
