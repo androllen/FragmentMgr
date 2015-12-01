@@ -19,10 +19,11 @@ import com.cc.fragmentmgr.tools.CLog;
  */
 public abstract class CCFragmentActivity  extends FragmentActivity{
 
+    private static final String TAG = "CCFragmentActivity";
+
     public CCFragmentActivity(){
 
     }
-    private static final String LOG_TAG = "cc-fragment";
     public static boolean DEBUG = true;
     protected CCFragment mCurrentFragment;
     private boolean mCloseWarned=false;
@@ -60,9 +61,10 @@ public abstract class CCFragmentActivity  extends FragmentActivity{
             if (fragment == null)
                 fragment = (CCFragment)cls.newInstance();
 
+            //先释放当前的fragment
             if ((this.mCurrentFragment != null) && (this.mCurrentFragment != fragment))
                 this.mCurrentFragment.onLeave();
-
+            //然后在把新的fragment加入
             fragment.onEnter(param.data);
 
             FragmentTransaction ft = fm.beginTransaction();

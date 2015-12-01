@@ -6,29 +6,31 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.cc.fragmentmgr.R;
 
 /**
- * Created by androllen on 2015/9/25.
+ * Created by androllen on 15/12/1.
  */
-public class PtrDemoHomeFragment extends TitleBaseFragment implements View.OnClickListener{
-    private static final String TAG = "PtrDemoHomeFragment";
+public class TabDemoFragment extends TitleBaseFragment implements View.OnClickListener{
+    private static final String TAG = "TabDemoFragment";
     private Button mButton;
-    @Override
-    protected View createView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view =inflater.inflate(this.getFrameLayoutId(), (ViewGroup)null);
+    public TabDemoFragment() {
+    }
 
+    @Override
+    protected View createView(LayoutInflater paramLayoutInflater, ViewGroup paramViewGroup, Bundle paramBundle) {
+        View view = paramLayoutInflater.inflate(getFrameLayoutId(),(ViewGroup)null);
         mButton=(Button)view.findViewById(R.id.btn_click);
         mButton.setOnClickListener(this);
         return view;
     }
-
     @Override
     public void onClick(View view) {
-        getContext().pushFragmentToBackStack(TabDemoFragment.class, null);
+        //Toast.makeText(getContext(), "tab", Toast.LENGTH_SHORT).show();
+        getContext().onBackPressed();
     }
-
     @Override
     protected int getFrameLayoutId() {
         return R.layout.fragment_cc;
@@ -36,11 +38,6 @@ public class PtrDemoHomeFragment extends TitleBaseFragment implements View.OnCli
 
     @Override
     protected String getHeaderTitle() {
-        return this.getString(R.string.hello_blank_fragment);
-    }
-
-    @Override
-    protected boolean enableDefaultBack(){
-        return false;
+        return this.getString(R.string.hello_world);
     }
 }

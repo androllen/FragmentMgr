@@ -12,6 +12,7 @@ import com.cc.fragmentmgr.R;
  * Created by androllen on 2015/9/25.
  */
 public abstract class TitleBaseFragment extends BaseFragment implements View.OnClickListener {
+    private static final String TAG = "TitleBaseFragment";
 
     protected abstract int getFrameLayoutId();
     protected TitleHeaderBar mTitleHeaderBar;
@@ -21,23 +22,23 @@ public abstract class TitleBaseFragment extends BaseFragment implements View.OnC
 
     }
 
-
     public View onCreateView(LayoutInflater Inflater, ViewGroup paramViewGroup, Bundle paramBundle) {
         ViewGroup view = (ViewGroup) Inflater.inflate(this.getLayoutId(), (ViewGroup)null);
         LinearLayout contentContainer = (LinearLayout) view.findViewById(R.id.cube_mints_content_frame_content);
 
         this.mTitleHeaderBar = (TitleHeaderBar) view.findViewById(R.id.cube_mints_content_frame_title_header);
         if (enableDefaultBack()) {
-            mTitleHeaderBar.getLeftViewContainer().setOnClickListener(this);
+            mTitleHeaderBar.setLeftViewContainer(this);
         } else {
             this.mTitleHeaderBar.getLeftViewContainer().setVisibility(View.INVISIBLE);
         }
+
+        this.mTitleHeaderBar.setTitle(getHeaderTitle());
 
         mContentContainer = contentContainer;
         View contentView = this.createView(Inflater, view, paramBundle);
         contentView.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.FILL_PARENT, LinearLayout.LayoutParams.FILL_PARENT));
         contentContainer.addView(contentView);
-
 
         return view;
     }
@@ -59,10 +60,6 @@ public abstract class TitleBaseFragment extends BaseFragment implements View.OnC
     @Override
     protected int getLayoutId() {
         return R.layout.base_content_frame_with_title_header;
-    }
-
-    protected void setHeaderTitle(String title) {
-        this.mTitleHeaderBar.getTitleTextView().setText(title);
     }
 
     private TitleHeaderBar getTitleHeaderBar() {
