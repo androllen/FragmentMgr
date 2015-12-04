@@ -1,12 +1,10 @@
-package com.cc.fragmentmgr.fragment.ui.view;
+package com.cc.fragmentmgr.view.fragment;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.Toast;
 
 import com.cc.fragmentmgr.R;
 
@@ -21,7 +19,7 @@ public class TabDemoFragment extends TitleBaseFragment implements View.OnClickLi
 
     @Override
     protected View createView(LayoutInflater paramLayoutInflater, ViewGroup paramViewGroup, Bundle paramBundle) {
-        View view = paramLayoutInflater.inflate(getFrameLayoutId(),(ViewGroup)null);
+        View view = paramLayoutInflater.inflate(getFrameLayoutId(),null);
         mButton=(Button)view.findViewById(R.id.btn_click);
         mButton.setOnClickListener(this);
         return view;
@@ -33,11 +31,11 @@ public class TabDemoFragment extends TitleBaseFragment implements View.OnClickLi
     }
     @Override
     protected int getFrameLayoutId() {
-        return R.layout.fragment_cc;
+        return R.layout.fragment_aty;
     }
 
     @Override
     protected String getHeaderTitle() {
-        return this.getString(R.string.hello_world);
+        return this.getString(R.string.title_activity_demo);
     }
 }

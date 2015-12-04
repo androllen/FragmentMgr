@@ -1,8 +1,4 @@
-package com.cc.fragmentmgr.fragment.ui.view;
-
-import android.view.View;
-
-import com.cc.fragmentmgr.fragment.CCFragment;
+package com.cc.fragmentmgr.view.fragment;
 
 /**
  * Created by androllen on 2015/9/25.

@@ -1,4 +1,4 @@
-package com.cc.fragmentmgr.fragment.life;
+package com.cc.fragmentmgr.life;
 
 public interface LifeCycleComponent
 {

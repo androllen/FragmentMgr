@@ -1,10 +1,17 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" tools:context="com.cc.fragmentmgr.fragment.CCFragment">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <!-- TODO: Update blank fragment layout -->
-    <Button android:id="@+id/btn_click"
+    <Button
+        android:id="@+id/btn_click"
         android:layout_width="fill_parent"
-        android:layout_height="100dp" android:text="click me"/>
+        android:layout_height="100dp"
+        android:text="click me" />
 
-</FrameLayout>
+    <Button
+        android:id="@+id/btn_actity"
+        android:layout_width="fill_parent"
+        android:layout_below="@id/btn_click"
+        android:layout_height="100dp" android:text="aty-click-me"/>
+</RelativeLayout>

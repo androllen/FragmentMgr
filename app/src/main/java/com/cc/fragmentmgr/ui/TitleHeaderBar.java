@@ -1,12 +1,9 @@
-package com.cc.fragmentmgr.fragment.ui.view;
+package com.cc.fragmentmgr.ui;
 
 import android.content.Context;
-import android.media.Image;
-import android.text.Layout;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;

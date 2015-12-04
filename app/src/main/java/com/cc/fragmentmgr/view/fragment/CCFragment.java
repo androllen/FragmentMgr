@@ -1,4 +1,4 @@
-package com.cc.fragmentmgr.fragment;
+package com.cc.fragmentmgr.view.fragment;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -7,14 +7,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.cc.fragmentmgr.R;
-import com.cc.fragmentmgr.fragment.app.ICCFragment;
-import com.cc.fragmentmgr.fragment.life.LifeCycleComponent;
-import com.cc.fragmentmgr.fragment.life.LifeCycleComponentManager;
+import com.cc.fragmentmgr.life.IComponentContainer;
+import com.cc.fragmentmgr.view.aty.CCFragmentActivity;
+import com.cc.fragmentmgr.app.ICCFragment;
+import com.cc.fragmentmgr.life.LifeCycleComponent;
+import com.cc.fragmentmgr.life.LifeCycleComponentManager;
 import com.cc.fragmentmgr.tools.CCDebug;
 import com.cc.fragmentmgr.tools.CLog;
 
-public abstract class CCFragment extends Fragment implements ICCFragment {
+public abstract class CCFragment extends Fragment implements ICCFragment,IComponentContainer {
 
     private static final boolean DEBUG = CCDebug.DEBUG_LIFE_CYCLE;
     protected Object mDataIn;

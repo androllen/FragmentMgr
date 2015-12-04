@@ -1,10 +1,10 @@
-package com.cc.fragmentmgr.fragment;
+package com.cc.fragmentmgr.view.aty;
 
 import android.os.Bundle;
 
-import com.cc.fragmentmgr.fragment.life.IComponentContainer;
-import com.cc.fragmentmgr.fragment.life.LifeCycleComponent;
-import com.cc.fragmentmgr.fragment.life.LifeCycleComponentManager;
+import com.cc.fragmentmgr.life.IComponentContainer;
+import com.cc.fragmentmgr.life.LifeCycleComponent;
+import com.cc.fragmentmgr.life.LifeCycleComponentManager;
 import com.cc.fragmentmgr.tools.CCDebug;
 import com.cc.fragmentmgr.tools.CLog;
 

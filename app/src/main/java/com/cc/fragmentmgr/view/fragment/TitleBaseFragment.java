@@ -1,4 +1,4 @@
-package com.cc.fragmentmgr.fragment.ui.view;
+package com.cc.fragmentmgr.view.fragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
 import com.cc.fragmentmgr.R;
+import com.cc.fragmentmgr.ui.TitleHeaderBar;
 
 /**
  * Created by androllen on 2015/9/25.

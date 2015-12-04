@@ -2,8 +2,9 @@ package com.cc.fragmentmgr;
 
 import android.os.Bundle;
 
-import com.cc.fragmentmgr.fragment.BaseActivity;
-import com.cc.fragmentmgr.fragment.ui.view.PtrDemoHomeFragment;
+import com.cc.fragmentmgr.model.FragmentType;
+import com.cc.fragmentmgr.view.aty.BaseActivity;
+import com.cc.fragmentmgr.view.fragment.PtrDemoHomeFragment;
 
 public class MainActivity extends BaseActivity {
 
@@ -16,7 +17,7 @@ public class MainActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        this.pushFragmentToBackStack(PtrDemoHomeFragment.class,null);
+        this.pushFragmentToBackStack(PtrDemoHomeFragment.class,null, FragmentType.Add);
 
     }
 

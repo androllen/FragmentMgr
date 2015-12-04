@@ -1,4 +1,4 @@
-package com.cc.fragmentmgr.fragment.app;
+package com.cc.fragmentmgr.app;
 
 /**
  * Created by androllen on 2015/9/18.
